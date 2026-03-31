@@ -4,199 +4,158 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SERVICES | The Staffing Pro</title>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Base Reset */
+        body, html { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; color: #000; }
         
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #000;
-            background-color: #fff;
-        }
-        
+        /* Header Styling from Index */
         header {
             background-color: #2f2e2e;
             color: #fff;
-            padding: 20px 0;
+            padding: 25px 0;
             border-bottom: 1px solid #a0a09f;
         }
-        
         header nav {
             max-width: 980px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 0 20px;
         }
-        
+        .logo-section {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
-            align-items: center;
+            gap: 25px;
         }
-        
         header nav a {
             color: #fff;
             text-decoration: none;
             font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.3s;
         }
-        
-        header nav a:hover {
-            color: #d1b40d;
+        header nav a:hover, .nav-active {
+            color: #fcd307;
         }
-        
-        header .logo-section {
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        
+
+        /* Hero Section */
         .hero-section {
             background-color: #fcd307;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            text-align: left;
         }
-        
         .hero-content {
             max-width: 980px;
             margin: 0 auto;
         }
-        
         .hero-content h1 {
             font-size: 55px;
-            margin-bottom: 20px;
-            font-family: Georgia, Palatino, serif;
-            font-weight: normal;
-            line-height: 1.4;
+            font-family: Georgia, serif;
+            margin-bottom: 10px;
         }
-        
         .hero-content p {
             font-size: 20px;
             font-style: italic;
             color: #333;
         }
-        
+
+        /* Services Grid */
         .services-section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             background-color: #fff;
         }
-        
         .services-container {
             max-width: 980px;
             margin: 0 auto;
         }
-        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-            margin-top: 40px;
+            gap: 40px;
         }
-        
         .service-card {
-            border: 1px solid #7a7a7a;
-            padding: 30px;
+            border: 1px solid #e0e0e0;
+            padding: 40px;
             background-color: #fff;
+            transition: transform 0.2s;
         }
-        
+        .service-card:hover {
+            border-color: #fcd307;
+        }
         .service-card h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            font-family: Georgia, Palatino, serif;
-            font-weight: normal;
+            font-family: Georgia, serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2f2e2e;
         }
-        
         .service-card p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.8;
-            color: #333;
+            color: #555;
         }
-        
+
+        /* Footer Styling from Index */
         footer {
-            background-color: #fff;
-            border-top: 1px solid #ccc;
-            padding: 40px 20px;
-            margin-top: 40px;
+            background-color: #2f2e2e;
+            color: #fff;
+            padding: 60px 20px;
+            margin-top: 0;
         }
-        
-        footer .footer-content {
+        .footer-content {
             max-width: 980px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
         }
-        
         footer h4 {
-            font-size: 14px;
-            margin-bottom: 10px;
-            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fcd307;
         }
-        
-        footer p {
+        footer p, footer ul li {
             font-size: 14px;
-            color: #333;
+            color: #ccc;
             line-height: 1.6;
         }
-        
-        footer ul {
-            list-style: none;
-        }
-        
-        footer ul li {
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-        
-        footer ul li a {
-            color: #000;
-            text-decoration: none;
-        }
-        
-        footer ul li a:hover {
-            text-decoration: underline;
-        }
-        
+        footer ul { list-style: none; padding: 0; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; }
+        footer a:hover { color: #fff; }
+
         @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            header nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .hero-content h1 {
-                font-size: 36px;
-            }
-            
-            footer .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .services-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 38px; }
+            header nav { flex-direction: column; gap: 20px; }
+            .footer-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
+
 <body>
-    <!-- Header -->
+
     <header>
         <nav>
             <div class="logo-section">
-                <strong>THE STAFFING PRO</strong>
+                THE STAFFING PRO
             </div>
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="technologies.html">TECHNOLOGIES</a></li>
-                <li><a href="services.html" class="current">SERVICES</a></li>
+                <li><a href="services.html" class="nav-active">SERVICES</a></li>
                 <li><a href="find-talent.html">FIND TALENT</a></li>
                 <li><a href="find-job.html">FIND A JOB</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
             <h1>OUR SERVICES</h1>
@@ -204,35 +163,29 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services-section">
         <div class="services-container">
             <div class="services-grid">
                 <div class="service-card">
                     <h3>PRODUCT ENGINEERING</h3>
-                    <p>Ideation &amp; Conceptualization; Business Analysis; Architecture &amp; Design; Development; Test Automation; Release Management &amp; DevOps; Sustained Engineering &amp; Support</p>
+                    <p>Ideation & Conceptualization; Business Analysis; Architecture & Design; Development; Test Automation; Release Management & DevOps; Sustained Engineering & Support</p>
                 </div>
-
                 <div class="service-card">
                     <h3>BUSINESS INTELLIGENCE</h3>
                     <p>Data Sources Management; Data Warehousing; Real-time BI; Corporate Performance Management (CPM); OLAP (Online Analytical Processing)</p>
                 </div>
-
                 <div class="service-card">
                     <h3>MOBILE APPLICATIONS</h3>
                     <p>Mobile App Development; Cross-Platform; UI/UX and Security; Digital Innovation; Connecting across touchpoints</p>
                 </div>
-
                 <div class="service-card">
                     <h3>INFRASTRUCTURE MANAGEMENT</h3>
-                    <p>OnPrem Infra Management, Cloud Management, Hybrid Management, Database Management, Network &amp; Storage Management, Backup &amp; Recovery Management.</p>
+                    <p>OnPrem Infra Management, Cloud Management, Hybrid Management, Database Management, Network & Storage Management, Backup & Recovery Management.</p>
                 </div>
-
                 <div class="service-card">
-                    <h3>ENTERPRISE APPLICATIONS &amp; DATA ARCHITECTURE</h3>
-                    <p>Business Centric Architecture; Smart &amp; Adaptable; Collaboration &amp; Governance; Secure &amp; Resilient; Robust &amp; Scalable; Centralized Management</p>
+                    <h3>ENTERPRISE APPLICATIONS & DATA ARCHITECTURE</h3>
+                    <p>Business Centric Architecture; Smart & Adaptable; Collaboration & Governance; Secure & Resilient; Robust & Scalable; Centralized Management</p>
                 </div>
-
                 <div class="service-card">
                     <h3>STAFFING SOLUTIONS</h3>
                     <p>Strategic Workforce Planning; Talent Acquisition; Recruitment Process Outsourcing; Contract Staffing; Managed Services; Executive Search</p>
@@ -241,12 +194,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div>
                 <h4>ABOUT US</h4>
-                <p>The Staffing Pro is a leading provider of technology staffing and IT solutions, connecting talented professionals with innovative organizations.</p>
+                <p>The Staffing Pro is a leading provider of technology staffing and IT solutions, connecting talented professionals with innovative organizations across the globe.</p>
             </div>
             <div>
                 <h4>QUICK LINKS</h4>
@@ -259,11 +211,15 @@
                 </ul>
             </div>
             <div>
-                <h4>CONTACT</h4>
-                <p>Follow us on LinkedIn<br>
-                <a href="https://www.linkedin.com/company/the-staffing-pro" target="_blank">LinkedIn Profile</a></p>
+                <h4>CONNECT</h4>
+                <p>Follow us on LinkedIn for updates:<br><br>
+                <a href="https://www.linkedin.com/company/the-staffing-pro" target="_blank" style="color: #fcd307; font-weight: bold;">LinkedIn Profile</a></p>
             </div>
         </div>
+        <div style="text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px; font-size: 12px; color: #888;">
+            © 2024 The Staffing Pro. All Rights Reserved.
+        </div>
     </footer>
+
 </body>
 </html>
